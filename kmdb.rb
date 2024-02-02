@@ -298,13 +298,13 @@ puts ""
     
 
 movies = Movie.all
-
+#studios = Studio.where({"studio_id" => warner["name"]})
 
 for movie in movies
-  
+#  for studio in studios
     puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{movie["studio_id"]}"
 end
-
+#end
 
 # Prints a header for the cast output
 puts ""
