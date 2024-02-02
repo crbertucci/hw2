@@ -79,6 +79,7 @@ Role.destroy_all
 # Generate models and tables, according to the domain model.
 # TODO!
 
+# rails db:migrate   in terminal 
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
@@ -295,9 +296,12 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
     
+
 movies = Movie.all
 
+
 for movie in movies
+  
     puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{movie["studio_id"]}"
 end
 
@@ -310,3 +314,9 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+roles = Role.all
+
+for role in roles
+    puts "#{role["movie_id"]} #{role["actor_id"]} #{role["character_name"]}"
+end
