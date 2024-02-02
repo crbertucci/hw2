@@ -86,11 +86,10 @@ Role.destroy_all
 
 new_studio = Studio.new 
 
-
 new_studio["name"] = "Warner Bros."
 new_studio.save
 
-puts new_studio.inspect 
+puts new_studio.inspect
 
 warner = Studio.find_by({"name" => "Warner Bros."})
 
@@ -254,21 +253,25 @@ role["actor_id"] = bale["id"]
 role["character_name"] = "Bruce Wayne"
 role.save
 
+role = Role.new
 role["movie_id"] = dark_knight_rises["id"]
 role["actor_id"] = oldman["id"]
 role["character_name"] = "Commissioner Gordon"
 role.save
 
+role = Role.new
 role["movie_id"] = dark_knight_rises["id"]
 role["actor_id"] = hardy["id"]
 role["character_name"] = "Bane"
 role.save
 
+role = Role.new
 role["movie_id"] = dark_knight_rises["id"]
 role["actor_id"] = levitt["id"]
 role["character_name"] = "John Blake"
 role.save
 
+role = Role.new
 role["movie_id"] = dark_knight_rises["id"]
 role["actor_id"] = hathaway["id"]
 role["character_name"] = "Selina Kyle"
