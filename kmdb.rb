@@ -79,9 +79,44 @@ Role.destroy_all
 # Generate models and tables, according to the domain model.
 # TODO!
 
+
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+new_studio = Studio.new 
+
+puts new_studio.inspect 
+
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+puts new_studio.inspect 
+
+warner = Studio.find_by({"name" => "Warner Bros."})
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = 2005 
+movie["rated"] = "PG-13"
+movie["studio_id"] = warner["id"]
+movie.save
+
+movie = Movie.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = 2008 
+movie["rated"] = "PG-13"
+movie["studio_id"] = warner["id"]
+movie.save
+
+
+
+puts "there are #{Studio.all.count} studios"
+
+puts "there are #{Movie.all.count} movies"
+
+puts "there are #{Actor.all.count} actors"
+
+puts "there are #{Role.all.count} roles"
 
 # Prints a header for the movies output
 puts "Movies"
