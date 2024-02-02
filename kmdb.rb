@@ -159,6 +159,31 @@ actor = Actor.new
 actor["name"] = "Anne Hathaway"
 actor.save
 
+batman_begins = Movie.find_by({"title" => "Batman Begins"})
+
+dark_knight = Movie.find_by({"title" => "The Dark Knight"})
+
+dark_knight_rises = Movie.find_by({"title" => "The Dark Knight Rises"})
+
+bale = Actor.find_by({"name" => "Christian Bale"})
+
+caine = Actor.find_by({"name" => "Michael Caine"})
+
+neeson = Actor.find_by({"name" => "Liam Neeson"})
+
+holmes = Actor.find_by({"name" => "Katie Holmes"})
+
+oldman = Actor.find_by({"name" => "Gary Oldman"})
+
+ledger = Actor.find_by({"name" => "Heath Ledger"})
+
+eckhart = Actor.find_by({"name" => "Aaron Eckhart"})
+
+gyllenhaal = Actor.find_by({"name" => "Maggie Gyllenhaal"})
+
+hardy = Actor.find_by({"name" => "Tom Hardy"})
+
+levitt = Actor.find_by({"name" => "Joseph Gordon-Levitt"})
 
 
 
