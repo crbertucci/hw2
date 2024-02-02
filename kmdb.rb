@@ -296,15 +296,14 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
     
-
-movies = Movie.all
-#studios = Studio.where({"studio_id" => warner["name"]})
+movies = Movie.where({"studio_id" => warner["id"]})
+studios = Studio.where({"name" => "Warner Bros."})
 
 for movie in movies
-#  for studio in studios
-    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{movie["studio_id"]}"
+    for studio in studios
+    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{studio["name"]}"
 end
-#end
+end
 
 # Prints a header for the cast output
 puts ""
