@@ -86,7 +86,6 @@ Role.destroy_all
 
 new_studio = Studio.new 
 
-puts new_studio.inspect 
 
 new_studio["name"] = "Warner Bros."
 new_studio.save
@@ -94,6 +93,7 @@ new_studio.save
 puts new_studio.inspect 
 
 warner = Studio.find_by({"name" => "Warner Bros."})
+
 movie = Movie.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = 2005 
@@ -107,6 +107,60 @@ movie["year_released"] = 2008
 movie["rated"] = "PG-13"
 movie["studio_id"] = warner["id"]
 movie.save
+
+movie = Movie.new
+movie["title"] = "The Dark Knight Rises"
+movie["year_released"] = 2012
+movie["rated"] = "PG-13"
+movie["studio_id"] = warner["id"]
+movie.save
+
+actor = Actor.new
+actor["name"] = "Christian Bale"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Michael Caine"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Liam Neeson"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Katie Holmes"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Gary Oldman"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Heath Ledger"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Aaron Eckhart"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Maggie Gyllenhaal"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Tom Hardy"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Joseph Gordon-Levitt"
+actor.save
+
+actor = Actor.new
+actor["name"] = "Anne Hathaway"
+actor.save
+
+
+
 
 
 
