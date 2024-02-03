@@ -301,7 +301,7 @@ studios = Studio.where({"name" => "Warner Bros."})
 
 for movie in movies
     for studio in studios
-    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{studio["name"]}"
+    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{movie["studio_id"]}"
 end
 end
 
@@ -317,6 +317,12 @@ puts ""
 roles = Role.all
 
 for role in roles
+
+    movie=Movie.find_by({"id" => role["movie_id"]})
+    movie_name=movie["title"]
+
+    actor=Actor.find_by({"id" => role["actor_id"]})
+    actor_name=actor["name"]
  
-puts "#{role["movie_id"]} #{role["actor_id"]} #{role["character_name"]}"
+puts "#{movie_name} #{actor_name} #{role["character_name"]}"
 end
