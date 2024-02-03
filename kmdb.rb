@@ -90,7 +90,6 @@ new_studio = Studio.new
 new_studio["name"] = "Warner Bros."
 new_studio.save
 
-puts new_studio.inspect
 
 warner = Studio.find_by({"name" => "Warner Bros."})
 
@@ -280,14 +279,6 @@ role.save
 
 
 
-puts "there are #{Studio.all.count} studios"
-
-puts "there are #{Movie.all.count} movies"
-
-puts "there are #{Actor.all.count} actors"
-
-puts "there are #{Role.all.count} roles"
-
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
@@ -296,13 +287,14 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
     
-movies = Movie.where({"studio_id" => warner["id"]})
-studios = Studio.where({"name" => "Warner Bros."})
+movies = Movie.all
 
 for movie in movies
-    for studio in studios
-    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{movie["studio_id"]}"
-end
+
+    studio=Studio.find_by({"id" => movie["studio_id"]})
+    studio_name=studio["name"]
+
+    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{studio_name}"
 end
 
 # Prints a header for the cast output
